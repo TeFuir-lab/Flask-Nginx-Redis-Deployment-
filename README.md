@@ -1,2 +1,19 @@
 # Flask-Nginx-Redis-Deployment-
- Production-style deployment of Flask with Nginx reverse proxy and Redis using Podman.
+Flask + Nginx + Redis 🚀
+
+Overview
+
+This project demonstrates a production-style deployment of a Flask application.
+
+Architecture
+
+Client → Nginx → Gunicorn → Flask → Redis
+
+Features
+	•	Reverse proxy with Nginx
+	•	Redis cache using Podman
+	•	Auto-start with systemd
+
+How to Run
+	1.	Start Redis (Podman)
+	2.	Start Flask (Gunicorn
