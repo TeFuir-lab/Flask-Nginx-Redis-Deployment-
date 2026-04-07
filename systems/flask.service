@@ -1,0 +1,24 @@
+mkdir systemd
+vim systemd/flask.service
+
+[Unit]
+Description=Flask App
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/flask-app
+ExecStart=/usr/local/bin/gunicorn -w 2 -b 127.0.0.1:5000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+##改成自己的路径
+which gunicorn
+
+
+cp systemd/flask.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable flask
+systemctl start flask
